@@ -1,7 +1,10 @@
+To incorporate the **Movie Recommendation System** into your README, here’s a version with the new section added:
+
+---
+
 # 🎬 Streaming Giants: A Comparative Analysis of Netflix, Disney+, and Amazon Prime
 
-This project provides a  comparative analysis of three major streaming platforms: **Netflix**, **Disney+**, and **Amazon Prime**. 
-It dives deep into the content available on each platform, exploring  aspects like movie/TV show durations, release years, genres, ratings, and the geographical distribution of content.
+This project provides a comparative analysis of three major streaming platforms: **Netflix**, **Disney+**, and **Amazon Prime**. It dives deep into the content available on each platform, exploring aspects like movie/TV show durations, release years, genres, ratings, and the geographical distribution of content. Additionally, the project includes a **Movie Recommendation System** that suggests similar titles based on various content attributes.
 
 ## 📑 Table of Contents
 - [Project Overview](#project-overview)
@@ -9,6 +12,7 @@ It dives deep into the content available on each platform, exploring  aspects li
 - [Installation](#installation)
 - [Features](#features)
 - [Analysis Highlights](#analysis-highlights)
+- [Movie Recommendation System](#movie-recommendation-system)
 - [Technologies Used](#technologies-used)
 - [Visualizations](#visualizations)
 - [Conclusion](#conclusion)
@@ -17,14 +21,14 @@ It dives deep into the content available on each platform, exploring  aspects li
 
 ## 📌 Project Overview
 
-This project was created to compare the content offerings of **Netflix**, **Disney+**, and **Amazon Prime**, analyzing key  points such as:
+This project was created to compare the content offerings of **Netflix**, **Disney+**, and **Amazon Prime**, analyzing key points such as:
 - **Content Type Distribution**: Movies vs TV Shows.
 - **Duration**: How long movies typically are on each platform.
 - **Genres**: How platforms categorize their content.
 - **Country-Specific Insights**: Countries producing the most content.
 - **Ratings**: Family-friendly vs adult-targeted content.
 - **Trends over Time**: Analyzing content additions and release year trends.
-
+- **Movie Recommendations**: Suggesting similar movies based on various attributes (e.g., genre, director, cast).
 
 ## 📊 Datasets
 
@@ -77,15 +81,14 @@ To run this project locally, follow these steps:
 - **Data Preprocessing**:
   - Handling missing values.
   - Parsing columns like "duration" and converting to numeric values.
-  - Formatting the "date added" column for time-based analysis.
+  - Feature engineering.
   
 - **Exploratory Data Analysis**:
   - Platform-wise content distribution (Movies vs TV Shows).
   - Ratings analysis to assess audience targeting.
-  - Genre correlation to understand how genres interrelate on each platform.
+  - Genre correlation analysis.
+  - Cross-country analyss.
 
-- **Merging Datasets**:
-  - Combining datasets for cross-platform comparisons.
 
 ## 📈 Analysis Highlights
 
@@ -97,6 +100,15 @@ To run this project locally, follow these steps:
 
 - **Geographical Insights**: Countries like the United States, India, and the UK dominate in terms of content production, with the U.S. being a major source for all three platforms.
 
+## 🔍 Movie Recommendation System
+
+The **Movie Recommendation System** suggests similar titles based on shared characteristics such as genres, cast, director, and description. This recommendation system employs several techniques:
+  
+- **Feature Encoding**: One-hot encoding for categorical features like 'type', 'genres', 'country', 'director', and 'cast'.
+- **TF-IDF Vectorization**: For movie descriptions to capture content-based similarities.
+- **Clustering**: K-Means clustering to group similar movies for recommendation.
+- **Graph-based Approach**: Using a graph where nodes represent movies, genres, and people (cast/director) for multi-dimensional recommendations.
+
 ## 🛠 Technologies Used
 
 - **Programming Languages**: Python
@@ -104,35 +116,21 @@ To run this project locally, follow these steps:
   - Pandas (for data manipulation)
   - Numpy (for numerical operations)
   - Matplotlib, Seaborn, Plotly (for data visualization)
-  - Scikit-learn (for preprocessing)
-  
+  - Scikit-learn (for preprocessing, vectorization, and clustering)
+  - NetworkX (for graph-based recommendation system)
+
 ## 📊 Visualizations
 
-The project  rich visualizations that help convey key insights:
+The project includes various visualizations that help convey key insights:
 - **Content Distribution**: Bar charts and heatmaps comparing content type (movies vs TV shows) across platforms.
 - **Ratings Analysis**: Pie charts and bar plots showing the distribution of audience ratings.
 - **Genre Correlation Heatmaps**: Highlighting relationships between genres for both movies and TV shows.
 - **Country-Specific Analysis**: Bar charts illustrating which countries produce the most content.
+- **Movie Recommendation Subgraphs**: Visualizing the connections between recommended movies, genres, cast, and directors.
 
 ## 🧐 Conclusion
 
 This project reveals:
 - The content strategies of Netflix, Disney+, and Amazon Prime are quite distinct.
 - Netflix and Amazon Prime target a broader demographic with more mature content, while Disney+ remains family-friendly.
-- The geographical spread of content production highlights the dominance of Western countries, with growing contributions from regions like India.
-
-## 🤝 Contributing
-
-Contributions are welcome! If you would like to contribute to this project, please:
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/your-feature`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/your-feature`).
-5. Open a pull request.
-
-## 📜 License
-
-The code and analysis in this project are available under the CC0: Public Domain license, meaning you can use, modify, and distribute it without restrictions.
-
-Data License
-The datasets used in this project are licensed under CC0: Public Domain, and the data files are © the original authors.
+- The **Movie Recommendation System** enhances user experience by providing suggestions based on movie attributes, leveraging advanced encoding and graph-based relationships.
